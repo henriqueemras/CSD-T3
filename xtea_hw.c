@@ -97,14 +97,14 @@ int main(void){
     printf("message: %08x\n", msg2);
 
     //cycles = TIMER0;
-    tdes_process(0, msg, msg2, tdes_key);  // Encriptação
+    tdes_process(1, msg, msg2, tdes_key);  // Encriptação
     //cycles = TIMER0 - cycles;
     printf("in1: %08x\n", global_data_out1);
     printf("in2: %08x\n", global_data_out2);
 
 
     //cycles = TIMER0;
-    tdes_process(1, global_data_out1, global_data_out2, tdes_key);  // Decriptação
+    tdes_process(0, global_data_out1, global_data_out2, tdes_key);  // Decriptação
     //cycles = TIMER0 - cycles;
     //printf("out: %08x\n", global_data_out1);
     //printf("out: %08x\n", global_data_out2);
